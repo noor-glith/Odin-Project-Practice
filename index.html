@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up-Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="left">
+        <div id =side-image>
+            <div id="logo"> <img src="odin-lined.png" alt="odin-page">
+                <h1>ODIN</h1>
+             </div>
+             <h5>Photo by Haly West on Unplash</h5>
+         </div>
+        </div>
+            
+<div class="right">
+    <div class="title"><p>This is not a real online service! You know you need something like this in your life to help you to realize your deepest dreams.
+        <br>Sign up <i>now</i> to get started.<br> <br>
+        You <i>know</i> you want to.</p></div>
+        <div class="container"></div>
+        <form action="#" method="get" >
+            <div class="user-input">
+            <div class="title2"><p>Let's do this!</p></div>
+            <div class="main-box"><div class="user-input-box">   <label for ="first-name">FIRST NAME</label>
+                <input id="first-name" type="text"> </div>
+            <div class="user-input-box">  <label for ="last-name">LAST NAME</label>
+                <input id="last-name" type="text"></div>
+            <div class="user-input-box">  <label for ="email">EMAIL</label>
+                <input id="email" type="text"></div>
+            <div class="user-input-box"> <label for ="phone-no">PHONE NUMBER</label>
+                <input type="text" id="phone-no"></div>
+            <div class="user-input-box"><label for ="password" >PASSWORD</label>
+                <input id="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="*Password do not match" required ></div>
+            <div class="user-input-box"><label for ="confirm-pw">CONFIRM PASSWORD</label><br>
+                <input id="confirm-pw" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required ></div></div>
+                </form></div>
+                <div class="btn">  <button type="submit">Create Account</button></div>
+    <div class="login">      <p>Already have an account?<u> Log in</u></p></div>
+
+    
+
+</div>
+</div>
+<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+  
+</body>
+</html>
